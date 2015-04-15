@@ -1,0 +1,121 @@
+<p>This is the componenten view.</p>
+
+<div class="btn btn-primary"
+     data-drag="true"
+     data-jqyoui-options="{revert: 'invalid'}"
+     ng-model="dragElem"
+     jqyoui-draggable="{animate:true, onStart:'startCallback(dragElem)'}"
+     ng-hide="!dragElem.title">
+     <span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span>
+     {{dragElem.title}}
+</div>
+
+
+<div class="row">
+  <div class="col-md-2">
+    <div class="row">
+      <div class="col-md-1">1</div>
+      <div class="col-md-1">2</div>
+      <div class="col-md-1">3</div>
+      <div class="col-md-1">4</div>
+      <div class="col-md-1">5</div>
+      <div class="col-md-1">6</div>
+    </div>
+    <div class="row">
+       <div class="col-md-4">*</div>
+       <div class="col-md-5">*</div>
+       <div class="col-md-3">*</div>
+    </div>
+    <div class="row">
+      <div class="col-md-5">*</div>
+      <div class="col-md-3">*</div>
+      <div class="col-md-4">*</div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">2 123 </div>
+      <div class="col-md-5">3 12345</div>
+      <div class="col-md-3">1 1</div>
+    </div>
+    <div class="row">
+
+    <div class="col-md-12">
+      <div class="list-group alert"
+           data-drag="true"
+           data-jqyoui-options="{revert: 'invalid'}"
+           ng-model="dragElem"
+           jqyoui-draggable="{animate:true, onStart:'startCallback(dragElem)'}"
+        >
+        <a href="#" class="list-group-item info">
+          <h4 class="list-group-item-heading small"><span class="glyphicon glyphicon-cog glyphicon-resize-small" aria-hidden="true"></span> Componente</h4>
+          <p class="list-group-item-text small">bla bla {{dropSignal}}</p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional: clear the XS cols if their content doesn't match in height -->
+  <div class="clearfix visible-md-block"></div>
+
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <th>Name</th>
+    <th>UUID</th>
+    <th>Typ</th>
+  </thead>
+  <tbody>
+    <tr ng-repeat="component in components">
+      <td>{{ component.name }}</td>
+      <td>{{ component.uuid }}</td>
+      <td>{{ component.iotType }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="thumbnail {{dropSignal}}" data-drop="true"
+     data-jqyoui-options
+     ng-model="dropElem"
+     jqyoui-droppable="{onOut:'onOut', onOver:'onOver'}"
+     style='height:50px;'>
+
+  <div class="btn btn-success" data-drag="false" data-jqyoui-options ng-model="dropElem"
+       jqyoui-draggable
+       ng-hide="!dropElem.title">
+      {{dropElem.title}}
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">
+      <div class="spinner">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+      </div>
+  </div>
+</div>
+
+<div class="btn btn-xs" aria-label="bla bla">Test123 <abbr title="attribute">attr</abbr></div>
+<p></p>
+<!-- Extra small button group -->
+<div class="btn-group">
+  <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+    Extra small button <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+    ...
+  </ul>
+
+</div>
+
